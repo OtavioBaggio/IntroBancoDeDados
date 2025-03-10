@@ -1,0 +1,118 @@
+-- PROJETO DE BANCO DE DADOS --  
+    - Modelagem -> elencar/identificar/destacar requisitos(estruturais e funcionais)
+      - Entidades -> tabelas
+      - Atributos -> variáveis/colunas
+        - identificadores -> chaves primárias -> primary key
+        - Ordinários -> não são identificadores
+      - Relacionamentos
+        - associação
+        - herença
+        - dependência
+      - Cardinalidade -> quantidde de um elemento de uma tabela que se relaciona com elementos de outra tabela
+        - FUNDAMENTAL para definir as chave estrangeiras -> foreign key
+          - TIPOS: 
+            - 1..1
+            - 1..*  ->  1..n
+            - *..*  ->  n..n
+    - Modelagem Lógica
+      - Tranformação em tabelas
+      - Definição de chaves estrangeiras a partir de cardinalidade
+        - 1..1  ->  a chave estrangeira pode estar em qualquer uma das entidades
+        - 1..n  ->  a chave vai para o lado da entidade que tem o n
+        - n..n  ->  cria-se uma terceira tabla onde as chaves primárias dad duas tabelas vão se unir/juntar na terceira tabela criada 
+
+  --EXEMPLO--
+Aluno de universidade federal
+
+Aluno n --- 1 Curso
+Curso 1 --- n Aluno
+
+Curso(codCurso, nome, ...)
+Aluno(codAluno, nome, ..., codCurso)
+    codCurso referencia Aluno
+
+
+--EXEMPLO 2--
+Designer
+
+Designer(codDesigner, nome, codMesa)
+    codMesa referencia Mesa
+
+Mesa(codMesa, dimensões, finalidade)
+
+
+--EXEMPLO 3--
+Pessoa e veículo
+
+Pessoa 0..* ---- 1..* Veículo
+
+Lógica
+Pessoa(codPessoa, nome, ..., cnh)
+Veículo(codVeículo, tipo, placa)
+
+Locação(codLocacao, codVeículo, codPessoa, dataRetirada, dataDevolução)
+    codVeículo referencia Veiculo
+    codPessoa referencia Pessoa
+
+
+--EXEMPLO 4--
+Sistema de gestão de jogos, equipes, ranking, clubes de superliga de voleibol.
+
+pessoa com nome, dataNascimento, apelido, CPF, telefone, email, sexo.
+treinadores é uma pessoa, código conselho.
+preparadores físicos com nomes(uma pessoa) com tipo, código conselho.
+jogadores com nomes, dataNascimento, posição, altura, sexo, apelido, ...
+times com nomes, lista de patrocinadores, clube, endereço, lista de centro de treinamento.
+jogos com 2 times, data, hora, clube, arbitro principal, arbitro secundário, arbitro de mesa, arbitro reserva, placar1SetCasa, placar1SetVisitante, placar2SetCasa, placar2SetVisitante... e assim por diante (criar placares até for necessário)
+MVP(usado muito em e-sports).
+
+
+--EXEMPLO 5--
+Patrocinador(codPatrocinador, nome, endereço, campo)
+TipoPessoa(codTipoPessoa, descricao)
+Pessoa(codPessoa ou CPF, nome, dataNasc, apelido, tipo, licencaTreinador,
+      codigoConselhoPreparador, posicaoJogador, alturaJogador, licencaArbitro)
+    tipo referencia TipoPessoa(codTipoPessoa)
+
+Time(cnpj, nome, cidade-sede)
+    cnpj é a chave primária
+
+Pessoa_Time(cpf, cnpj, dataInicio, dataFim)
+    pessoa, time, dataInicio é chave primária
+    treinador referencia Pessoa(cpf)
+    time referencia Time(cnpj)
+
+Jogo(codJogo, data, hora, timeCasa, timeVisitante, arbitroPrincipal)
+    codJogo é a chave primária
+    timeCasa referencia Time(cnpj)
+    timeVisitante referencia Time(cnpj)
+    arbitroPrincipal referencia Pessoa(cpf)
+
+12014, suzano, são paulo
+12035, interzinho, santa maria
+
+100, alex, treinador
+101, bortoloro, jogador
+102, cassio, jogador
+103, pedro, preparador
+
+100, 12014 
+101, 12014
+102, 12014
+103, 12014
+100, 12014 (Exemplo de Repetição, que não pode acontecer)
+mas...
+    se forem de datas muitos distintas, pode haver recorrencia no banco
+    100, 12014  ->   10/02/1980
+    100, 12014  ->   22/08/2021
+
+
+
+
+
+
+
+
+
+
+
