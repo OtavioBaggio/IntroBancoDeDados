@@ -49,6 +49,77 @@
   Engenheiro_Projeto (engenheiro, projeto)
   2, 100
   2, 102
+
+  ----- EXERCÍCIO 1 -----
+  --> Modelo de ER farmácia
+
+  Fornecedor (idFornecedor, nome)
+      idFornecedor é chave primária
+  1, alexandre
+
+  Fabricante (idFabricante, nome)
+      idFabricante é chave primária
+  100, pedro
+
+  Fabricante_Fornecedor (idFabricante_Fornecedor, fabricante, fornec, data)
+      idFabricante_Fornecedor é chave primária
+      fabricante referencia Fabricante
+      fornec referencia Fornecedor
+  10, 100, 500, 12/03
+  11, 100, 500, 20/03
+
+  TipoProduto (idTipoProduto, nome)
+      idTipoProduto é chave primária
+  Lote (idLote, fornec, descricao)
+      idLote é chave primária
+      fornec referencia Fornecedor
+  Produto (tipo, idProduto, dataF, dataV, preço, precisaReceita)
+      idProduto é chave primária
+      tipo referencia TipoProduto
+      receita referencia ReceitaMed
+  
+  100, espran, ..., ..., med, true
+  101, novorapid, ..., ..., med, false
+  230, agua, ..., ..., alim, null
+  500, caiaque, ..., ..., pard, null
+
+  Lote_Produto (idLote_Produto, lote, produto)
+      lote e produto são chave primária
+      lote referencia Lote
+      produto referencia Produto
+  1, 100, 500
+
+  Analise (idAnalise, idLote_Produto)
+
+  Venda (idVenda, notaFiscal, data)
+  1000, 56757567, 17/03/2025
+
+  Produto_Venda (idProduto_Venda, produto, receita(NULL))
+      idProduto_Venda é chave primária
+      produto referencia Produto
+      receita referencia ReceitaMed
+  ReceitaMed (idReceita, data, medico)
+      idReceita é chave primária
+  700, 17/02/2025, Veronesse
+  .
+  .
+  .
+  Fornecedor (idFornecedor, nome)
+      1  Dismed
+      2  MedLoko 
+      3  MeteDroga
+  Fabricante (idFabricante, nome)
+      15  Pantene
+      16  Collgate
+      17  RitaleeMedicamentos
+  Fabricante_Fornecedor (fabricante, fornecedor)
+  1  16
+  2  17
+  Produto (idProduto, nome)
+  Tipo
+  Venda (idVenda, nome)
+  Lote_Produto
+  
   
 
 
