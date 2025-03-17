@@ -1,0 +1,60 @@
+--> ESTRATÉGIA "INSIDE OUT" <--
+  A estratégia De dentro para fora, consta de partir de conceitos considerados mais imporante(centrais, parte-se "de dentro") e ir gradativamente adicionando conceitos periféricos a eles relacionados (ir "para fora").
+
+  -- EXEMPLO 1 --
+  Departamento (idDepartamento, nome)
+  ProcessadorTexto (idProcTexto, descricao)
+  Projeto (idProjeto, descricao)
+  Tipo (idTipo, descricao)
+  Empregado (idEmpregado, nome, CPF, tipo, CREA (NULL), gerente (NULL), departamento)
+      tipo referencia Tipo
+      gerente referencia Empregado
+      departamento referencia Departamento
+  Secretaria_ProcessadorTexto (secretaria, processador)
+      secretaria referencia Empregado
+      processador referencia ProcessadorTexto
+  Engenheiro_Projeto (engenheiro, projeto)
+      engenheiro referencia Empregado
+      projeto referencia Projeto
+
+  -- EXEMPLO 2 --
+  Departamento (idDepartamento, nome)
+    Ciencia da Computação
+    Sistemas de Informação
+    Jogos Digitais
+
+  ProcessadorTexto (idProcessador, descricao)
+  10 Word MS
+  20 Star Office
+  30 Libre Office
+
+  Projeto (idProjeto, descricao)
+  100 Longevos
+  102 Raquetada dos Amigos
+
+  Tipo (idTipo, descricao)
+  1001 Gerente
+  1002 Secretária
+  1003 Engenheiro
+
+  Empregado (idEmpregado, nome, CPF, tipo, CREA, gerente, departamento)
+  1   Alexandre, cpf1212, 1001, NULL, NULL, 1
+  2   Pedro, cpf15645, 1003, crea34234, 1, 1
+  3   Eric, cpf3654, 1002, NULL, 1, 1
+
+  Secretaia_Processador(secretaria, processador)
+  3   10
+  3   20
+
+  Engenheiro_Projeto (engenheiro, projeto)
+  2, 100
+  2, 102
+  
+
+
+
+
+
+
+
+    
