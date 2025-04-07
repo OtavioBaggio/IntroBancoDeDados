@@ -1,0 +1,20 @@
+--------------------------------------------------------- SERVIÇOS DE NUVEM ----------------------------------------------------------------------------------
+
+IaaS - A IaaS (infraestrutura como serviço) é um tipo de serviço de computação em nuvem que oferece recursos fundamentais de computação, armazenamento e rede sob demanda e pagos conforme o uso. 
+A IaaS é um dos quatro tipos de serviços de nuvem, juntamente com o SaaS (software como serviço), a PaaS (plataforma como serviço) e a tecnologia  sem servidor.
+A migração da infraestrutura da organização para uma solução de IaaS ajuda a reduzir a manutenção dos datacenters locais, economizar em custos de hardware e adquirir informações sobre os negócios em tempo real. 
+As soluções de IaaS oferecem flexibilidade para escalar e reduzir os recursos de TI verticalmente conforme a demanda. Elas também ajudam a provisionar rapidamente novos aplicativos e a aumentar a confiabilidade da infraestrutura subjacente.
+Com a IaaS, você não precisa arcar com o custo e a complexidade de comprar e gerenciar os servidores físicos e a infraestrutura do datacenter. 
+Cada recurso é oferecido como um componente de serviço separado e você só paga por um recurso específico durante o tempo em que precisa dele. 
+Um provedor de serviços de computação em nuvem , como o Azure , gerencia a infraestrutura, enquanto você compra, instala, configura e gerencia seus produtos de software, 
+incluindo os sistemas operacionais, o middleware e os aplicativos.
+
+PaaS - A plataforma como serviço refere-se aos serviços de computação em nuvem que fornecem um ambiente sob demanda para desenvolvimento, teste, fornecimento e gerenciamento de aplicativos de software. 
+A PaaS foi criada para facilitar aos desenvolvedores criarem aplicativos móveis ou Web rapidamente, sem se preocupar com a configuração ou o gerenciamento de infraestrutura subjacente de servidores, 
+armazenamento, rede e bancos de dados necessários para desenvolvimento.
+
+
+SaaS - O software como serviço é um método para a distribuição de aplicativos de software pela Internet sob demanda e, normalmente, baseado em assinaturas. 
+Com o SaaS, os provedores de nuvem hospedam e gerenciam o aplicativo de software e a infraestrutura subjacente. Esses provedores também gerenciam qualquer tipo de manutenção, 
+como atualizações de software e aplicações de patch de segurança. Os usuários conectam o aplicativo pela Internet, normalmente com um navegador da Web em seu telefone, tablet ou PC.
+
